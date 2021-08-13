@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES6",
+        "sourceMap": true,
+        "outDir": "./src",
+    },
+    "include": [
+        "index.ts","start.ts"
+    ],
+    "exclude": ["node_modules"]
+}

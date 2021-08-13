@@ -1,0 +1,13 @@
+{
+  "name": "anchangwan",
+  "version": "1.0.0",
+  "description": "typescript study",
+  "main": "index.js",
+  "author": "anchangwan",
+  "license": "MIT",
+  "scripts": 
+  {
+    "start": "node src/index.js src/start.js",
+    "prestart":"tsc"
+  }
+}
