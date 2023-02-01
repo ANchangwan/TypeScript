@@ -141,3 +141,38 @@ else if 안에서는 number형의 name 반환
 else 안에서는 never형의 name 반환
 ⇒ 즉, 제대로 인자가 전달되었다면 else로 올 수 없음
 ```
+
+##  📌 CLASSES AND INTERFACES
+
+```
+### 📌접근 가능한 위치
+
+구분　　　선언한 클래스 내　상속받은 클래스 내　인스턴스
+private 　 　　 ⭕　　　　　　　❌　　　　　❌
+protected 　　　⭕　　　　　　　⭕　　　　　❌
+public　　　　  ⭕　　　　　　　⭕　　　　　⭕
+```
+### ✅ Classes
+```typescript
+abstract class User{
+constructor(
+private firstname:string,
+private lastname:string,
+public nickname:string
+){
+abstract getNickname():void
+}
+}
+
+class Player extends User{
+// 추상 메서드는 추상 클래스를 상속받는 클래스들이 반드시 구현(implement)해야하는 메서드이다.
+getNickname(){
+console.log(this.nickname)
+}
+}
+```
+public: 모든 클래스에서 접근 가능
+private: 해당 클래스 내에서만 접근 가능 (자식 클래스에서도 접근 불가)
+protected: 해당 클래스와 자식 클래스에서 접근 가능
+
+
