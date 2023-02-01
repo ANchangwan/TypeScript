@@ -171,8 +171,8 @@ console.log(this.nickname)
 }
 }
 ```
-public: 모든 클래스에서 접근 가능
-private: 해당 클래스 내에서만 접근 가능 (자식 클래스에서도 접근 불가)
-protected: 해당 클래스와 자식 클래스에서 접근 가능
+public: 모든 클래스에서 접근 가능<br/>
+private: 해당 클래스 내에서만 접근 가능 (자식 클래스에서도 접근 불가)<br/>
+protected: 해당 클래스와 자식 클래스에서 접근 가능<br/>
 
 
