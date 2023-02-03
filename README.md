@@ -185,7 +185,7 @@ interface PersonName{
 }
 
 ```
-```typescirpt
+```typescript
 
 interface User {
     firstname:string,
