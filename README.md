@@ -174,4 +174,19 @@ public: 모든 클래스에서 접근 가능<br/>
 private: 해당 클래스 내에서만 접근 가능 (자식 클래스에서도 접근 불가)<br/>
 protected: 해당 클래스와 자식 클래스에서 접근 가능<br/>
 
+### ✅ interface
+객체의 모양을 특정해주기 위해 사용합니다. 여기서는 firstName 및 lastName 필드가 있는 객체를 설명하는 인터페이스를 사용합니다
+
+```typescript
+
+interface PersonName{
+  firstName:string
+  lastName:string
+}
+
+```
+
+
+
+
 
