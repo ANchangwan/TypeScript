@@ -207,6 +207,7 @@ class player implements User,Humor{
 ```
 1. 인터페이스는 상속이 가능하다</br>
 2. 인터페이스는 다중 상속이 가능하다</br>
+3. 인터페이스를 상속할 때는 implements를 사용한다.
 
 
 
