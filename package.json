@@ -1,0 +1,18 @@
+{
+  "name": "type-script",
+  "version": "1.0.0",
+  "description": "✅ 배열: 자료형[]\r ✅ 숫자: number\r ✅ 문자열: string\r ✅ 논리: boolean\r ✅ optional",
+  "scripts": {
+    "build": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ANchangwan/TypeScript.git"
+  },
+  "author": "Ahn changwan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ANchangwan/TypeScript/issues"
+  },
+  "homepage": "https://github.com/ANchangwan/TypeScript#readme"
+}
