@@ -141,3 +141,73 @@ else if 안에서는 number형의 name 반환
 else 안에서는 never형의 name 반환
 ⇒ 즉, 제대로 인자가 전달되었다면 else로 올 수 없음
 ```
+
+##  📌 CLASSES AND INTERFACES
+
+```
+### 📌접근 가능한 위치
+
+구분　　　선언한 클래스 내　상속받은 클래스 내　인스턴스
+private 　 　　 ⭕　　　　　　　❌　　　　　❌
+protected 　　　⭕　　　　　　　⭕　　　　　❌
+public　　　　  ⭕　　　　　　　⭕　　　　　⭕
+```
+### ✅ Classes
+```typescript
+abstract class User{
+    constructor(
+        private firstname:string,
+        private lastname:string,
+        public nickname:string
+    ){}
+    abstract getNickname():void
+}
+
+class Player extends User{
+// 추상 메서드는 추상 클래스를 상속받는 클래스들이 반드시 구현(implement)해야하는 메서드이다.
+    getNickname(){
+        console.log(this.nickname)
+    }
+}
+```
+public: 모든 클래스에서 접근 가능<br/>
+private: 해당 클래스 내에서만 접근 가능 (자식 클래스에서도 접근 불가)<br/>
+protected: 해당 클래스와 자식 클래스에서 접근 가능<br/>
+
+### ✅ interface
+객체의 모양을 특정해주기 위해 사용합니다. 여기서는 firstName 및 lastName 필드가 있는 객체를 설명하는 인터페이스를 사용합니다
+
+```typescript
+
+interface PersonName{
+  firstName:string
+  lastName:string
+}
+
+```
+```typescript
+
+interface User {
+    firstname:string,
+    lastName:string
+}
+
+interface Human{
+  health:number,
+  body:number
+}
+
+class player implements User,Humor{
+    constructor(
+        public firstname:string,
+        public lastName:string
+    ){}
+}
+
+```
+1. 인터페이스는 상속이 가능하다</br>
+2. 인터페이스는 다중 상속이 가능하다</br>
+3. 인터페이스를 상속할 때는 implements를 사용한다.
+
+
+
