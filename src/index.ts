@@ -1,3 +1,22 @@
-import { init } from "myPackage";
+// import crypto from "crypto";
 
-init({ url: "true" });
+interface BlockShape {
+  hash: string;
+  prevHash: string;
+  height: number;
+  data: string;
+}
+class Block implements BlockShape {
+  public hash: string;
+  constructor(
+    public prevHash: string,
+    public height: number,
+    public data: string
+  ) {
+    this.hash = Block.caculateHash(prevHash, height, data);
+  }
+  static caculateHash(prevHash: string, height: number, data: string): string {
+    const toHash = `${prevHash} ${height} ${data}`;
+    return toHash;
+  }
+}

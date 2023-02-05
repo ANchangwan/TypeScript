@@ -1,2 +1,2 @@
-import { init } from "myPackage";
-init({ url: "true" });
+"use strict";
+console.log("hi");
