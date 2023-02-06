@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/ANchangwan/TypeScript#readme",
   "devDependencies": {
+    "@types/node": "^18.11.19",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1"
-  },
-  "dependencies": {}
+  }
 }
