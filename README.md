@@ -2,12 +2,13 @@
 
 ## 📌 Types of TS(기본)
 
-✅ 배열: 자료형[]
-✅ 숫자: number
-✅ 문자열: string
-✅ 논리: boolean
-✅ optional
+✅ 배열: 자료형[]<br/>
+✅ 숫자: number<br/>
+✅ 문자열: string<br/>
+✅ 논리: boolean<br/>
+✅ optional<br/>
 
+✍️ 타입스크립트는 타입을 추론할 수 있기 때문에 타입스크립트가 추론할 수 있도록 하는게 좋다.
 ```typescript
 const player: {
   name: string;
