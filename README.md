@@ -98,7 +98,7 @@ undefined: 선언X 할당X
 null: 선언O 할당X
 ```
 
-## 📌 Types of TS(part II)
+## 📌 Types of TS(part III)
 
 ```typescript
 ✅ unknown
