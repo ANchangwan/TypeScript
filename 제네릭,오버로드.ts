@@ -67,7 +67,7 @@ class GGeolocation{
        
     };
 
-    successFn(pos:Pos){
+    successFn(pos:Pos):void{
         const crd = pos;
         console.log("Your current position is:");
         console.log(`Latitude : ${crd.latitude}`);
