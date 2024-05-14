@@ -16,7 +16,19 @@ interface Pos{
     latitude:number
 
 };
-type SSuccess = (pos:Pos) => void
+interface Error{
+    code:string,
+    message:string
+}
+
+type SSuccess = (pos:Pos) => void;
+type ErrorFn = () => string;
+
+const error = {
+    code:"400",
+    message:"에러가 발생했습니다."
+}
+
 
 
 class GGeolocation{
@@ -24,16 +36,15 @@ class GGeolocation{
         this.pos = pos;
     }
    
-
     watchPosition(success:Pos):void;
-    watchPosition(success:Pos,error:string):void;
-    watchPosition(success:Pos,error:string,option:Options):void;
+    watchPosition(success:Pos,error:Error):void;
+    watchPosition(success:Pos,error:Error,option:Options):void;
 
-    watchPosition(success:Pos, error?:string, option?:Options):Watch{
+    watchPosition(success:Pos, error?:Error, option?:Options):Watch{
         const crd = this.pos;
-        if(error !== undefined) return "에러가 발생했습니다";
+        if(error !== undefined) return `Error ${error.code}, ${error.message}`;
         if(option !== undefined) {
-            console.log(option);
+            console.log(`${option.timeout} ${option.maximumAge} ${option.enableHighAccuracy}`);
         }
         if(success.latitude === crd.latitude && success.longitude === crd.longitude){
             console.log("Congratulations, you reached the target");
@@ -42,16 +53,15 @@ class GGeolocation{
     }
 
     getCurrentPosition(successFn:SSuccess): GetPosition;
-    getCurrentPosition(successFn: SSuccess,errorFn:() => string): GetPosition;
-    getCurrentPosition(successFn: SSuccess,errorFn:() => string, options:Options): GetPosition;
+    getCurrentPosition(successFn: SSuccess,errorFn:ErrorFn): GetPosition;
+    getCurrentPosition(successFn: SSuccess,errorFn:ErrorFn, options:Options): GetPosition;
 
-    getCurrentPosition(successFn:SSuccess, errorFn?:() => string, options?:Options): GetPosition{
+    getCurrentPosition(successFn:SSuccess, errorFn?:ErrorFn, options?:Options): GetPosition{
         if(errorFn !== undefined) {
             errorFn();
         };
         if(options !== undefined){
-           
-            console.log( `${options}`);
+           console.log(`${options.timeout} ${options.maximumAge} ${options.enableHighAccuracy}`);
         };
         successFn(this.pos);
        
